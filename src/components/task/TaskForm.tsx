@@ -2,7 +2,7 @@ import { KeyboardEvent, useState, useRef, useEffect } from 'react'
 import { useTaskContext } from '@/hooks/useTaskContext'
 import { useAutosizeTextArea } from '@/hooks/useAutosizeTextArea'
 import { Status } from '@/types'
-import { Card, TextArea } from '@/styles'
+import { Card, TextArea } from './styles'
 
 type Props = {
   status: Status
