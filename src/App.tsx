@@ -1,13 +1,13 @@
 import { DragDropContext } from 'react-beautiful-dnd'
 import { useTaskContext } from './hooks/useTaskContext'
-import { Container, BoardContainer } from './styles'
+import { Container, Heading, BoardContainer } from './styles'
 import BoardColumn from './components/board-column/BoardColumn'
 
 const Home = () => {
   const { statuses, handleDrag } = useTaskContext()
   return (
     <Container>
-      <h1>Task Manager</h1>
+      <Heading>Task Manager</Heading>
       <BoardContainer>
         <DragDropContext onDragEnd={handleDrag}>
           {statuses.map((status, index) => (

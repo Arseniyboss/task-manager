@@ -8,6 +8,10 @@ export const Container = styled.main`
   gap: 1rem;
 `
 
+export const Heading = styled.h1`
+  text-align: center;
+`
+
 export const BoardContainer = styled.section`
   display: grid;
   grid-template-columns: repeat(3, minmax(340px, 1fr));
