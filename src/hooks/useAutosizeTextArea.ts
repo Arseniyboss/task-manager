@@ -1,12 +1,20 @@
-import { RefObject, useEffect } from 'react'
+import { RefObject, useEffect, useCallback } from 'react'
 
 type Ref = RefObject<HTMLTextAreaElement>
 
-export const useAutosizeTextArea = (ref: Ref, value: string) => {
-  useEffect(() => {
-    if (ref.current) {
-      ref.current.style.height = 'auto' // adjusts height when deleting multiple lines of text
-      ref.current.style.height = `${ref.current.scrollHeight}px`
+export const useAutoResizeTextarea = (ref: Ref, value: string) => {
+  const handleResize = useCallback(() => {
+    const textarea = ref.current
+    if (textarea) {
+      textarea.style.height = 'auto' // adjusts height when deleting multiple lines of text
+      textarea.style.height = `${textarea.scrollHeight}px`
     }
-  }, [ref, value])
+  }, [ref])
+  useEffect(() => {
+    handleResize()
+    window.addEventListener('resize', handleResize)
+    return () => {
+      window.removeEventListener('resize', handleResize)
+    }
+  }, [handleResize, ref, value])
 }

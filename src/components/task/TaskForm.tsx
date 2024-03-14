@@ -1,6 +1,6 @@
 import { KeyboardEvent, useState, useRef, useEffect } from 'react'
 import { useTaskContext } from '@/hooks/useTaskContext'
-import { useAutosizeTextArea } from '@/hooks/useAutosizeTextArea'
+import { useAutoResizeTextarea } from '@/hooks/useAutosizeTextArea'
 import { Status } from '@/types'
 import { Card, TextArea } from './styles'
 
@@ -11,15 +11,15 @@ type Props = {
 const TaskForm = ({ status }: Props) => {
   const [task, setTask] = useState<string>('')
 
-  const textAreaRef = useRef<HTMLTextAreaElement>(null)
+  const textareaRef = useRef<HTMLTextAreaElement>(null)
 
   const { isAdding, setIsAdding, addTask } = useTaskContext()
 
-  useAutosizeTextArea(textAreaRef, task)
+  useAutoResizeTextarea(textareaRef, task)
 
   useEffect(() => {
     if (isAdding) {
-      textAreaRef.current?.focus()
+      textareaRef.current?.focus()
     }
   }, [isAdding])
 
@@ -35,7 +35,7 @@ const TaskForm = ({ status }: Props) => {
     <Card>
       <TextArea
         value={task}
-        ref={textAreaRef}
+        ref={textareaRef}
         rows={1}
         onChange={(e) => setTask(e.target.value)}
         onKeyDown={handleEnter}
