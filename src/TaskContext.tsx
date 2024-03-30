@@ -23,7 +23,7 @@ export const TaskContextProvider = ({ children }: Props) => {
 
     const currentIndex = source.index
     const newIndex = destination.index
-    const currentStatus = source.droppableId
+    const currentStatus = source.droppableId as Status
     const newStatus = destination.droppableId as Status
 
     if (currentIndex === newIndex && currentStatus === newStatus) return
