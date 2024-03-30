@@ -16,6 +16,19 @@ export const TaskContextProvider = ({ children }: Props) => {
   const [isAdding, setIsAdding] = useState<boolean>(false)
   const [currentStatus, setCurrentStatus] = useState<CurrentStatus>('')
 
+  const dragTask = (task: Task, newStatus: Status, newIndex: number) => {
+    const reorderedTasks = [...tasks]
+    const filteredTasks = filterTasks(newStatus)
+    const updatedTask = filteredTasks[newIndex]
+    const draggableTaskIndex = tasks.findIndex(({ id }) => id === task.id)
+    const updatedTaskIndex = tasks.findIndex(({ id }) => id === updatedTask.id)
+    // remove a task from the column from which it is being dragged
+    reorderedTasks.splice(draggableTaskIndex, 1)
+    // add the dragged task to a new column
+    reorderedTasks.splice(updatedTaskIndex, 0, task)
+    return reorderedTasks
+  }
+
   const handleDrag = (result: DropResult) => {
     const { source, destination, draggableId } = result
 
@@ -28,23 +41,13 @@ export const TaskContextProvider = ({ children }: Props) => {
 
     if (currentIndex === newIndex && currentStatus === newStatus) return
 
-    const reorderedTasks = [...tasks]
-    const currentTask = tasks.find((task) => task.id === draggableId)!
-    const currentTaskIndex = tasks.findIndex(({ id }) => id === currentTask.id)
-
-    // remove a task from the column from which it is being dragged
-    reorderedTasks.splice(currentTaskIndex, 1)
+    const draggableTask = tasks.find((task) => task.id === draggableId)!
 
     if (newStatus !== currentStatus) {
-      currentTask.status = newStatus
+      draggableTask.status = newStatus
     }
 
-    const filteredTasks = filterTasks(newStatus)
-    const updatedTask = filteredTasks[newIndex]
-    const updatedTaskIndex = tasks.findIndex(({ id }) => id === updatedTask.id)
-
-    // add the dragged task to a new column
-    reorderedTasks.splice(updatedTaskIndex, 0, currentTask)
+    const reorderedTasks = dragTask(draggableTask, newStatus, newIndex)
 
     setTasks(reorderedTasks)
   }
