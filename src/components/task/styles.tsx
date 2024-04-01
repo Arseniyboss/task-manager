@@ -6,7 +6,7 @@ type CardProps = {
 }
 
 export const Card = styled.li<CardProps>`
-  background: ${({ $themeStyles }) => $themeStyles.cardColor};
+  background: ${({ $themeStyles }) => $themeStyles.background};
   list-style-type: none;
   display: flex;
   justify-content: space-between;

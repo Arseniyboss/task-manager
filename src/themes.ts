@@ -4,13 +4,11 @@ export const themes: Themes = {
   light: {
     background: 'white',
     color: '#555',
-    columnColor: '#f4f5f7',
-    cardColor: 'white',
+    columnColor: '#f5f5f5',
   },
   dark: {
-    background: '#1d2125',
-    color: 'lightgrey',
-    columnColor: '#191d20',
-    cardColor: '#252a2d',
+    background: '#424c54',
+    color: 'white',
+    columnColor: '#384249',
   },
 }
