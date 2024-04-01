@@ -3,7 +3,7 @@ import { useTheme } from './hooks/useTheme'
 import { useTaskContext } from './hooks/useTaskContext'
 import { Container, Header, BoardContainer } from './styles'
 import GlobalStyle from './GlobalStyle'
-import ThemeIcons from './components/theme-icons/ThemeIcons'
+import ThemeSwitcher from './components/theme-switcher/ThemeSwitcher'
 import BoardColumn from './components/board-column/BoardColumn'
 
 const Home = () => {
@@ -15,7 +15,7 @@ const Home = () => {
       <Container>
         <Header>
           <h1>Task Manager</h1>
-          <ThemeIcons />
+          <ThemeSwitcher />
         </Header>
         <BoardContainer>
           <DragDropContext onDragEnd={handleDrag}>
