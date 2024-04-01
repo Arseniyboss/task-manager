@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { KeyboardEvent, useState, useRef } from 'react'
 import { DraggableProvided } from 'react-beautiful-dnd'
 import { FaTrashAlt } from 'react-icons/fa'
 import { useTheme } from '@/hooks/useTheme'
@@ -29,6 +29,11 @@ const Task = (props: Props) => {
     editTask(id, trimmedTask)
   }, [task])
 
+  const handleEnter = (e: KeyboardEvent) => {
+    if (e.key === 'Enter') {
+      e.preventDefault()
+    }
+  }
   return (
     <Card
       {...dragHandleProps}
@@ -41,6 +46,7 @@ const Task = (props: Props) => {
         ref={textareaRef}
         rows={1}
         onChange={(e) => setTask(e.target.value)}
+        onKeyDown={handleEnter}
         aria-label='edit task input'
       />
       <Button aria-label='delete task' onClick={() => deleteTask(id)}>
