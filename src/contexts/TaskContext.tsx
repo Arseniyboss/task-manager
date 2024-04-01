@@ -1,6 +1,6 @@
 import { ReactNode, createContext, useState } from 'react'
 import { DropResult } from 'react-beautiful-dnd'
-import { TaskContextType, Task, Status, CurrentStatus } from '@/types'
+import { TaskContextType, Task, Status, CurrentStatus } from '@/types/task'
 import { useLocalStorage } from '@/hooks/useLocalStorage'
 
 type Props = {

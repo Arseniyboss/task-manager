@@ -8,8 +8,10 @@ export const Container = styled.main`
   gap: 1rem;
 `
 
-export const Heading = styled.h1`
-  text-align: center;
+export const Header = styled.header`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `
 
 export const BoardContainer = styled.section`

@@ -1,7 +1,8 @@
 import { Droppable, Draggable } from 'react-beautiful-dnd'
 import { FaPlus } from 'react-icons/fa'
+import { useTheme } from '@/hooks/useTheme'
 import { useTaskContext } from '@/hooks/useTaskContext'
-import { Status } from '@/types'
+import { Status } from '@/types/task'
 import { Button } from '@/styles'
 import { Container, BoardHeader, CardContainer } from './styles'
 import Task from '@/components/task/Task'
@@ -12,10 +13,11 @@ type Props = {
 }
 
 const BoardColumn = ({ status }: Props) => {
+  const { themeStyles } = useTheme()
   const { currentStatus, isAdding, handleAdd, filterTasks } = useTaskContext()
   const isCurrentColumn = status === currentStatus
   return (
-    <Container>
+    <Container $themeStyles={themeStyles}>
       <BoardHeader>
         <h2>{status}</h2>
         <Button aria-label='add task' onClick={() => handleAdd(status)}>

@@ -1,7 +1,12 @@
 import styled from 'styled-components'
+import { ThemeStyles } from '@/types/theme'
 
-export const Container = styled.article`
-  background: #f4f5f7;
+type ContainerProps = {
+  $themeStyles: ThemeStyles
+}
+
+export const Container = styled.article<ContainerProps>`
+  background: ${({ $themeStyles }) => $themeStyles.columnColor};
   display: flex;
   flex-direction: column;
   gap: 1rem;
