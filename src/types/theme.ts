@@ -4,6 +4,7 @@ export type ThemeStyles = {
   background: string
   color: string
   columnColor: string
+  cardColor: string
 }
 
 export type Themes = Record<Theme, ThemeStyles>

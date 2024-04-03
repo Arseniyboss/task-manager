@@ -5,10 +5,12 @@ export const themes: Themes = {
     background: 'white',
     color: '#555',
     columnColor: '#f5f5f5',
+    cardColor: 'white',
   },
   dark: {
-    background: '#424c54',
-    color: 'white',
-    columnColor: '#384249',
+    background: '#1c1d22',
+    color: '#c7c7c7',
+    columnColor: '#27272f',
+    cardColor: '#383a43',
   },
 }
