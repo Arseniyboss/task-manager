@@ -10,7 +10,7 @@ type Props = {
 export const TaskContext = createContext<TaskContextType | null>(null)
 
 export const TaskContextProvider = ({ children }: Props) => {
-  const statuses: Status[] = ['Todo', 'In Progress', 'Done']
+  const statuses: Status[] = ['To Do', 'In Progress', 'Done']
 
   const [tasks, setTasks] = useLocalStorage<Task[]>('tasks', [])
   const [isAdding, setIsAdding] = useState<boolean>(false)

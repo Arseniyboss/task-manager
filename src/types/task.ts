@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from 'react'
 import { DropResult } from 'react-beautiful-dnd'
 
-export type Status = 'Todo' | 'In Progress' | 'Done'
+export type Status = 'To Do' | 'In Progress' | 'Done'
 
 export type Task = {
   id: string

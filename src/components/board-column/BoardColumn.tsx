@@ -15,6 +15,7 @@ type Props = {
 const BoardColumn = ({ status }: Props) => {
   const { themeStyles } = useTheme()
   const { currentStatus, isAdding, handleAdd, filterTasks } = useTaskContext()
+  const filteredTasks = filterTasks(status)
   const isCurrentColumn = status === currentStatus
   return (
     <Container $themeStyles={themeStyles}>
@@ -27,7 +28,7 @@ const BoardColumn = ({ status }: Props) => {
       <Droppable droppableId={status}>
         {(provided) => (
           <CardContainer {...provided.droppableProps} ref={provided.innerRef}>
-            {filterTasks(status).map((task, index) => (
+            {filteredTasks.map((task, index) => (
               <Draggable key={task.id} draggableId={task.id} index={index}>
                 {(provided) => <Task key={task.id} {...task} {...provided} />}
               </Draggable>
