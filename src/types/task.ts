@@ -13,9 +13,9 @@ export type CurrentStatus = Status | ''
 
 export type TaskContextType = {
   statuses: Status[]
-  currentStatus: CurrentStatus
   tasks: Task[]
   isAdding: boolean
+  isCurrentColumn: (status: Status) => boolean
   setIsAdding: Dispatch<SetStateAction<boolean>>
   handleAdd: (status: Status) => void
   handleDrag: (result: DropResult) => void

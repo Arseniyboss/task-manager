@@ -14,9 +14,8 @@ type Props = {
 
 const BoardColumn = ({ status }: Props) => {
   const { themeStyles } = useTheme()
-  const { currentStatus, isAdding, handleAdd, filterTasks } = useTaskContext()
+  const { isAdding, isCurrentColumn, handleAdd, filterTasks } = useTaskContext()
   const filteredTasks = filterTasks(status)
-  const isCurrentColumn = status === currentStatus
   return (
     <Container $themeStyles={themeStyles}>
       <BoardHeader>
@@ -33,7 +32,9 @@ const BoardColumn = ({ status }: Props) => {
                 {(provided) => <Task key={task.id} {...task} {...provided} />}
               </Draggable>
             ))}
-            {isAdding && isCurrentColumn && <TaskForm status={status} />}
+            {isAdding && isCurrentColumn(status) && (
+              <TaskForm status={status} />
+            )}
             {provided.placeholder}
           </CardContainer>
         )}

@@ -16,6 +16,10 @@ export const TaskContextProvider = ({ children }: Props) => {
   const [isAdding, setIsAdding] = useState<boolean>(false)
   const [currentStatus, setCurrentStatus] = useState<CurrentStatus>('')
 
+  const isCurrentColumn = (status: Status) => {
+    return status === currentStatus
+  }
+
   const dragTask = (task: Task, newStatus: Status, newIndex: number) => {
     const reorderedTasks = [...tasks]
     const filteredTasks = filterTasks(newStatus)
@@ -79,9 +83,9 @@ export const TaskContextProvider = ({ children }: Props) => {
 
   const value = {
     statuses,
-    currentStatus,
     tasks,
     isAdding,
+    isCurrentColumn,
     setIsAdding,
     handleAdd,
     handleDrag,
