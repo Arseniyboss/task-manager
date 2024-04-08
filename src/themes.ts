@@ -8,9 +8,9 @@ export const themes: Themes = {
     cardColor: '#fff',
   },
   dark: {
-    background: '#25272f',
-    color: '#eee',
-    columnColor: '#343944',
-    cardColor: '#4b4f5d',
+    background: '#1c1d22',
+    color: '#ccc',
+    columnColor: '#27272f',
+    cardColor: '#383a43',
   },
 }

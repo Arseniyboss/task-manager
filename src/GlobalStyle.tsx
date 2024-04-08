@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle<Props>`
   body {
     font-family: Arial, Helvetica, sans-serif;
     background: ${({ themeStyles }) => themeStyles.background};
-    color: ${({ themeStyles }) => themeStyles.color};;
+    color: ${({ themeStyles }) => themeStyles.color};
   }
   
   h1 {
