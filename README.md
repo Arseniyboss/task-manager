@@ -10,6 +10,8 @@ Task manager built with React
 - Framework: **ReactJS**
 - Styling: **Styled Components**
 
+## Commands
+
 | Command               | Action                                  |
 | --------------------- | --------------------------------------- |
 | npm install           | installs dependencies                   |
