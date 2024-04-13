@@ -23,9 +23,7 @@ export const BoardHeader = styled.header`
 `
 
 export const CardContainer = styled.ul`
-  display: flex;
-  flex-direction: column;
-  flex: 1;
+  height: 100%;
   overflow-y: scroll;
 
   &::-webkit-scrollbar {

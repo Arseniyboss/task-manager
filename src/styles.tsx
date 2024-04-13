@@ -18,7 +18,7 @@ export const BoardContainer = styled.section`
   display: grid;
   grid-template-columns: repeat(3, minmax(340px, 1fr));
   gap: 1rem;
-  flex: 1;
+  height: 100%;
   overflow: scroll;
 `
 
