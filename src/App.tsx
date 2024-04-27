@@ -6,7 +6,7 @@ import GlobalStyle from './GlobalStyle'
 import ThemeSwitcher from './components/theme-switcher/ThemeSwitcher'
 import BoardColumn from './components/board-column/BoardColumn'
 
-const Home = () => {
+const App = () => {
   const { themeStyles } = useTheme()
   const { statuses, handleDrag } = useTaskContext()
   return (
@@ -29,4 +29,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default App
