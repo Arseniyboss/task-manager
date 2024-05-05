@@ -28,7 +28,12 @@ const BoardColumn = ({ status }: Props) => {
         {(provided) => (
           <CardContainer {...provided.droppableProps} ref={provided.innerRef}>
             {filteredTasks.map((task, index) => (
-              <Draggable key={task.id} draggableId={task.id} index={index}>
+              <Draggable
+                key={task.id}
+                index={index}
+                draggableId={task.id}
+                isDragDisabled={isAdding}
+              >
                 {(provided) => <Task key={task.id} {...task} {...provided} />}
               </Draggable>
             ))}
