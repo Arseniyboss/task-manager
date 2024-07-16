@@ -20,13 +20,21 @@ const BoardColumn = ({ status }: Props) => {
     <Container $themeStyles={themeStyles}>
       <BoardHeader>
         <h2>{status}</h2>
-        <Button aria-label='add task' onClick={() => handleAdd(status)}>
+        <Button
+          onClick={() => handleAdd(status)}
+          aria-label='add task'
+          data-testid='add-task-button'
+        >
           <FaPlus size={18} />
         </Button>
       </BoardHeader>
       <Droppable droppableId={status}>
         {(provided) => (
-          <CardContainer {...provided.droppableProps} ref={provided.innerRef}>
+          <CardContainer
+            {...provided.droppableProps}
+            ref={provided.innerRef}
+            data-testid='task-list'
+          >
             {filteredTasks.map((task, index) => (
               <Draggable
                 key={task.id}

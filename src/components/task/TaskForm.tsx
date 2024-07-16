@@ -41,6 +41,7 @@ const TaskForm = ({ status }: Props) => {
         rows={1}
         onChange={(e) => setTask(e.target.value)}
         onKeyDown={handleEnter}
+        data-testid='add-task-input'
       />
     </Card>
   )

@@ -7,9 +7,10 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
+    "preview": "vite preview --host",
     "compile": "tsc --incremental false",
-    "update:latest": "ncu -u && npm install"
+    "update:latest": "ncu -u && npm install",
+    "e2e": "start-server-and-test preview 4173 \"cypress open --browser chrome --e2e \""
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -26,9 +27,11 @@
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
     "@vitejs/plugin-react": "^4.2.1",
+    "cypress": "^13.13.0",
     "eslint": "^8.57.0",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.6",
+    "start-server-and-test": "^2.0.4",
     "typescript": "^5.4.2",
     "vite": "^5.1.6"
   }

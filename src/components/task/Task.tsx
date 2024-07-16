@@ -40,6 +40,7 @@ const Task = (props: Props) => {
       {...draggableProps}
       ref={innerRef}
       $themeStyles={themeStyles}
+      data-testid='task'
     >
       <TextArea
         value={task}
@@ -48,8 +49,13 @@ const Task = (props: Props) => {
         onChange={(e) => setTask(e.target.value)}
         onKeyDown={handleEnter}
         aria-label='edit task input'
+        data-testid='edit-task-input'
       />
-      <Button aria-label='delete task' onClick={() => deleteTask(id)}>
+      <Button
+        onClick={() => deleteTask(id)}
+        aria-label='delete task'
+        data-testid='delete-task-button'
+      >
         <FaTrashAlt />
       </Button>
     </Card>
