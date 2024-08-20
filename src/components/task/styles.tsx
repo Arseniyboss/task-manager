@@ -10,7 +10,7 @@ export const Card = styled.li<CardProps>`
   list-style-type: none;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   border-radius: 0.25rem;
   padding: 1rem;
   margin-bottom: 0.75rem;
