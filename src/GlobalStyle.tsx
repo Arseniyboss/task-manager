@@ -10,6 +10,10 @@ const GlobalStyle = createGlobalStyle<Props>`
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
   }
 
   body {
