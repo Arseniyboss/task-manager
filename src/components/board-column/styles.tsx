@@ -13,7 +13,7 @@ export const Container = styled.article<ContainerProps>`
   padding: 1rem;
   padding-bottom: 0.25rem;
   border-radius: 0.25rem;
-  overflow-y: scroll;
+  overflow-y: auto;
 `
 
 export const BoardHeader = styled.header`
@@ -25,4 +25,8 @@ export const BoardHeader = styled.header`
 export const CardContainer = styled.ul`
   height: 100%;
   overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `
