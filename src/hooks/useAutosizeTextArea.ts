@@ -5,10 +5,9 @@ type Ref = RefObject<HTMLTextAreaElement>
 export const useAutoResizeTextarea = (ref: Ref, value: string) => {
   const handleResize = useCallback(() => {
     const textarea = ref.current
-    if (textarea) {
-      textarea.style.height = 'auto' // adjusts height when deleting multiple lines of text
-      textarea.style.height = `${textarea.scrollHeight}px`
-    }
+    if (!textarea) return
+    textarea.style.height = 'auto' // adjusts height when deleting multiple lines of text
+    textarea.style.height = `${textarea.scrollHeight}px`
   }, [ref])
   useEffect(() => {
     handleResize()
