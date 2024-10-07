@@ -24,5 +24,6 @@ export const TextArea = styled.textarea`
   font-size: inherit;
   font-family: inherit;
   resize: none;
+  overflow-y: hidden;
   width: 90%;
 `
