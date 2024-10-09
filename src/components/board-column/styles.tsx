@@ -24,7 +24,7 @@ export const BoardHeader = styled.header`
 
 export const CardContainer = styled.ul`
   height: 100%;
-  overflow-y: scroll;
+  overflow-y: auto;
 
   &::-webkit-scrollbar {
     display: none;
