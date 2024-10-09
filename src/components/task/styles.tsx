@@ -26,4 +26,5 @@ export const TextArea = styled.textarea`
   resize: none;
   overflow-y: hidden;
   width: 90%;
+  line-height: 1.17;
 `
