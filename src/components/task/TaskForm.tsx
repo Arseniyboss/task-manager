@@ -26,12 +26,11 @@ const TaskForm = ({ status }: Props) => {
   }, [isAdding])
 
   const handleEnter = (e: KeyboardEvent) => {
-    if (e.key === 'Enter') {
-      e.preventDefault()
-      if (!task) return
-      addTask(task.trim(), status)
-      setIsAdding(false)
-    }
+    if (e.key !== 'Enter') return
+    e.preventDefault()
+    if (!task) return
+    addTask(task.trim(), status)
+    setIsAdding(false)
   }
   return (
     <Card $themeStyles={themeStyles}>
