@@ -14,7 +14,7 @@ export const Header = styled.header`
   justify-content: center;
 `
 
-export const BoardContainer = styled.section`
+export const BoardWrapper = styled.section`
   display: grid;
   grid-template-columns: repeat(3, minmax(340px, 1fr));
   gap: 1rem;

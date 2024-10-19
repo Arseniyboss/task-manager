@@ -5,7 +5,7 @@ type ContainerProps = {
   $themeStyles: ThemeStyles
 }
 
-export const Container = styled.article<ContainerProps>`
+export const BoardContainer = styled.article<ContainerProps>`
   background: ${({ $themeStyles }) => $themeStyles.columnColor};
   display: flex;
   flex-direction: column;
@@ -22,7 +22,7 @@ export const BoardHeader = styled.header`
   align-items: center;
 `
 
-export const CardContainer = styled.ul`
+export const CardWrapper = styled.ul`
   height: 100%;
   overflow-y: auto;
 

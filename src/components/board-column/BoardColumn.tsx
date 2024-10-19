@@ -4,7 +4,7 @@ import { useTheme } from '@/hooks/useTheme'
 import { useTaskContext } from '@/hooks/useTaskContext'
 import { Status } from '@/types/task'
 import { Button } from '@/styles'
-import { Container, BoardHeader, CardContainer } from './styles'
+import { BoardContainer, BoardHeader, CardWrapper } from './styles'
 import Task from '@/components/task/Task'
 import TaskForm from '@/components/task/TaskForm'
 
@@ -17,7 +17,7 @@ const BoardColumn = ({ status }: Props) => {
   const { isAdding, isCurrentColumn, handleAdd, filterTasks } = useTaskContext()
   const filteredTasks = filterTasks(status)
   return (
-    <Container $themeStyles={themeStyles}>
+    <BoardContainer $themeStyles={themeStyles}>
       <BoardHeader>
         <h2>{status}</h2>
         <Button
@@ -30,7 +30,7 @@ const BoardColumn = ({ status }: Props) => {
       </BoardHeader>
       <Droppable droppableId={status}>
         {(provided) => (
-          <CardContainer
+          <CardWrapper
             {...provided.droppableProps}
             ref={provided.innerRef}
             data-testid='task-list'
@@ -49,10 +49,10 @@ const BoardColumn = ({ status }: Props) => {
               <TaskForm status={status} />
             )}
             {provided.placeholder}
-          </CardContainer>
+          </CardWrapper>
         )}
       </Droppable>
-    </Container>
+    </BoardContainer>
   )
 }
 

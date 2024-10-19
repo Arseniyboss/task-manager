@@ -1,7 +1,7 @@
 import { DragDropContext } from 'react-beautiful-dnd'
 import { useTheme } from './hooks/useTheme'
 import { useTaskContext } from './hooks/useTaskContext'
-import { Container, Header, BoardContainer } from './styles'
+import { Container, Header, BoardWrapper } from './styles'
 import GlobalStyle from './GlobalStyle'
 import ThemeSwitcher from './components/theme-switcher/ThemeSwitcher'
 import BoardColumn from './components/board-column/BoardColumn'
@@ -17,13 +17,13 @@ const App = () => {
           <h1>Task Manager</h1>
           <ThemeSwitcher />
         </Header>
-        <BoardContainer>
+        <BoardWrapper>
           <DragDropContext onDragEnd={handleDrag}>
             {statuses.map((status, index) => (
               <BoardColumn key={index} status={status} />
             ))}
           </DragDropContext>
-        </BoardContainer>
+        </BoardWrapper>
       </Container>
     </>
   )
