@@ -1,4 +1,4 @@
-import { RefObject, useEffect, useCallback } from 'react'
+import { RefObject, useCallback, useLayoutEffect } from 'react'
 
 type Ref = RefObject<HTMLTextAreaElement>
 
@@ -9,7 +9,7 @@ export const useAutoResizeTextarea = (ref: Ref, value: string) => {
     textarea.style.height = 'auto' // adjusts height when deleting multiple lines of text
     textarea.style.height = `${textarea.scrollHeight}px`
   }, [ref])
-  useEffect(() => {
+  useLayoutEffect(() => {
     handleResize()
     window.addEventListener('resize', handleResize)
     return () => {
