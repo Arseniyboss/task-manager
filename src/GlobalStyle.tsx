@@ -13,6 +13,7 @@ const GlobalStyle = createGlobalStyle<Props>`
   }
 
   body {
+    overscroll-behavior: none;
     font-family: Arial, Helvetica, sans-serif;
     background: ${({ themeStyles }) => themeStyles.background};
     color: ${({ themeStyles }) => themeStyles.color};
