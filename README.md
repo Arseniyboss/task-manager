@@ -9,6 +9,7 @@ Task manager built with React
 - Language: **TypeScript**
 - Framework: **ReactJS**
 - Styling: **Styled Components**
+- E2E Testing: **Cypress**
 
 ## Commands
 
