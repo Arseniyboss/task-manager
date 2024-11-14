@@ -3,7 +3,7 @@ import { DraggableProvided } from 'react-beautiful-dnd'
 import { FaTrashAlt } from 'react-icons/fa'
 import { useTheme } from '@/hooks/useTheme'
 import { useTaskContext } from '@/hooks/useTaskContext'
-import { useAutoResizeTextarea } from '@/hooks/useAutosizeTextArea'
+import { useAutoResizeTextArea } from '@/hooks/useAutosizeTextArea'
 import { useUpdateEffect } from '@/hooks/useUpdateEffect'
 import { Task as TaskProps } from '@/types/task'
 import { Button } from '@/styles'
@@ -21,7 +21,7 @@ const Task = (props: Props) => {
   const { themeStyles } = useTheme()
   const { deleteTask, editTask } = useTaskContext()
 
-  useAutoResizeTextarea(textareaRef, task)
+  useAutoResizeTextArea(textareaRef, task)
 
   useUpdateEffect(() => {
     const trimmedTask = task.trim()
@@ -40,7 +40,7 @@ const Task = (props: Props) => {
       {...draggableProps}
       ref={innerRef}
       $themeStyles={themeStyles}
-      data-testid='task'
+      data-testid="task"
     >
       <TextArea
         value={task}
@@ -48,13 +48,13 @@ const Task = (props: Props) => {
         rows={1}
         onChange={(e) => setTask(e.target.value)}
         onKeyDown={handleEnter}
-        aria-label='edit task input'
-        data-testid='edit-task-input'
+        aria-label="edit task input"
+        data-testid="edit-task-input"
       />
       <Button
         onClick={() => deleteTask(id)}
-        aria-label='delete task'
-        data-testid='delete-task-button'
+        aria-label="delete task"
+        data-testid="delete-task-button"
       >
         <FaTrashAlt />
       </Button>
