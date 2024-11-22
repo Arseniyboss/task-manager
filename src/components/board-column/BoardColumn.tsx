@@ -1,4 +1,4 @@
-import { Droppable, Draggable } from 'react-beautiful-dnd'
+import { Droppable, Draggable } from '@hello-pangea/dnd'
 import { FaPlus } from 'react-icons/fa'
 import { useTheme } from '@/hooks/useTheme'
 import { useTaskContext } from '@/hooks/useTaskContext'
@@ -22,8 +22,8 @@ const BoardColumn = ({ status }: Props) => {
         <h2>{status}</h2>
         <Button
           onClick={() => handleAdd(status)}
-          aria-label='add task'
-          data-testid='add-task-button'
+          aria-label="add task"
+          data-testid="add-task-button"
         >
           <FaPlus size={18} />
         </Button>
@@ -33,7 +33,7 @@ const BoardColumn = ({ status }: Props) => {
           <CardWrapper
             {...provided.droppableProps}
             ref={provided.innerRef}
-            data-testid='task-list'
+            data-testid="task-list"
           >
             {filteredTasks.map((task, index) => (
               <Draggable
@@ -45,9 +45,7 @@ const BoardColumn = ({ status }: Props) => {
                 {(provided) => <Task key={task.id} {...task} {...provided} />}
               </Draggable>
             ))}
-            {isAdding && isCurrentColumn(status) && (
-              <TaskForm status={status} />
-            )}
+            {isAdding && isCurrentColumn(status) && <TaskForm status={status} />}
             {provided.placeholder}
           </CardWrapper>
         )}

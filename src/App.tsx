@@ -1,4 +1,4 @@
-import { DragDropContext } from 'react-beautiful-dnd'
+import { DragDropContext } from '@hello-pangea/dnd'
 import { useTheme } from './hooks/useTheme'
 import { useTaskContext } from './hooks/useTaskContext'
 import { Container, Header, BoardWrapper } from './styles'
