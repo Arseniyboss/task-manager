@@ -1,6 +1,6 @@
 import { RefObject, useLayoutEffect } from 'react'
 
-type Ref = RefObject<HTMLTextAreaElement>
+type Ref = RefObject<HTMLTextAreaElement | null>
 
 export const useAutoResizeTextArea = (ref: Ref, resizeTrigger: string) => {
   const handleResize = () => {
