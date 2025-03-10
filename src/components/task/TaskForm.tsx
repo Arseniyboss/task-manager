@@ -29,8 +29,9 @@ const TaskForm = ({ status }: Props) => {
   }, [isAdding])
 
   const handleAddTask = () => {
-    if (!task) return
-    addTask(task.trim(), status)
+    const trimmedTask = task.trim()
+    if (!trimmedTask) return
+    addTask(trimmedTask, status)
     setIsAdding(false)
   }
 
