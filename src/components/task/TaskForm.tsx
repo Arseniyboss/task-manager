@@ -51,7 +51,7 @@ const TaskForm = ({ status }: Props) => {
         data-testid="add-task-input"
       />
       <Button onClick={handleAddTask} aria-label="add task" data-testid="add-task-button">
-        <FaCircleCheck />
+        <FaCircleCheck size={19} />
       </Button>
     </Card>
   )

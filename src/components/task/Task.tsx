@@ -49,7 +49,7 @@ const Task = (props: Props) => {
         aria-label="delete task"
         data-testid="delete-task-button"
       >
-        <FaTrashAlt />
+        <FaTrashAlt size={18} />
       </Button>
     </Card>
   )
